@@ -490,7 +490,12 @@ mark,
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-
+.aboutproj{
+  text-align: center;
+}
+.studentabout{
+  text-align: left;
+}
 .blockquote-footer {
   display: block;
   font-size: 80%;
