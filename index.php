@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php session_start(); /* Starts the session */
+/* THIS WAS A ADAPTED FROM A TUTORIAL FROM W3SCHOOLS */
+if(!isset($_SESSION['UserData']['Username'])){
+	header("location:login.php");
+	exit;
+}
+?>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -6,7 +13,7 @@
     <!-- linking the style sheets for bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css">
   </head>
-  <header> <!-- this header is the naviagation bar for all of your pages-->
+  <header>
     <body>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.html">UoD Computing Degree Show 2019</a>
@@ -17,31 +24,24 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="students.html">Students</a> <!-- links to the student page -->
+          <a class="nav-link" href="students.html">Students</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="projects.html">Projects</a> <!-- links to the project page -->
+          <a class="nav-link" href="projects.html">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a> <!-- links to the contact page -->
+          <a class="nav-link" href="contact.html">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a> <!-- links to the login page -->
-        </li>
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="projects.html">projects</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul> -->
     </div>
   </nav>
   </header>
+</head>
+<body>
 
-  <body>
+	You have successfully logged in. To access the database then <a href="http://localhost:8888/phpMyAdmin/?lang=en">Click here</a><br>
+	<a href="logout.php">Click here</a> to Logout.
+
+</body>
 <!-- scripts for jquery and javascript-->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -53,5 +53,4 @@
   <div class="footer-copyright text-center py-3">© 2019 Copyright:
     <a href="https://mdbootstrap.com/education/bootstrap/"> Iain MacDonald</a>
   </div>
-  <!-- Copyright -->
 </html>
